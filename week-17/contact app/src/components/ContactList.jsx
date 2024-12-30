@@ -1,45 +1,4 @@
-// import ContactItem from "./ContactItem";
-
-// import styles from "./ContactList.module.css";
-
-// function ContactList({
-//   contacts,
-//   deleteHandler,
-//   editHandler,
-//   // setEditModeActive,
-//   setContact,
-// }) {
-//   return (
-//     <div className={styles.container}>
-//       <div className={styles.topHeader}>
-//         <h3>Contacts List</h3>
-//         <input type="text" placeholder="Search by email or name..." />
-//       </div>
-//       {contacts.length ? (
-//         <ul className={styles.contacts}>
-//           {contacts.map((contact) => (
-//             <ContactItem
-//               key={contact.id}
-//               data={contact}
-//               deleteHandler={deleteHandler}
-//               editHandler={editHandler}
-//               // setEditModeActive={setEditModeActive}
-//               setContact={setContact}
-//             />
-//           ))}
-//         </ul>
-//       ) : (
-//         <p className={styles.message}>No Contact Yet!</p>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default ContactList;
-
-// ================================
-
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import ContactItem from "./ContactItem";
 
 import { ContactsContext } from "./Contacts";

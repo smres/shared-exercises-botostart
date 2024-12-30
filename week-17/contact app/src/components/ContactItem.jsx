@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 
 import { ContactsContext } from "./Contacts";
 
@@ -51,9 +51,7 @@ function ContactItem({
             fontWeight: "700",
             cursor: "pointer",
           }}
-          onClick={
-            () => setIsActiveActionButtons(true)
-          }
+          onClick={() => setIsActiveActionButtons(true)}
         >
           ...
         </span>
