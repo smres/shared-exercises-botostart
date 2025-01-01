@@ -25,7 +25,6 @@ function AddOrEditProductForm({
     e.preventDefault();
 
     if (!name || !price || !quantity)
-      
       return notify("warning", "!لطفا فیلدها رو به درستی پر کنید");
 
     try {
@@ -54,7 +53,7 @@ function AddOrEditProductForm({
       }
     } catch (error) {
       notify("error", "خطا در اضافه کردن محصول");
-      setIsActiveEditBtn(false);
+      setAddOrEditProductModal(false);
     }
   };
 

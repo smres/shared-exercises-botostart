@@ -1,6 +1,11 @@
-import styles from "./Pagination.jsx";
+import styles from "./Pagination.module.css";
 
 function Pagination({ currentPage, setCurrentPage, totalPages }) {
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1
+  );
+
   const handleNextPage = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
@@ -10,24 +15,21 @@ function Pagination({ currentPage, setCurrentPage, totalPages }) {
   };
 
   return (
-    <div className={styles.pagination} style={{ marginTop: "2rem" }}>
-      <button
-        onClick={handlePreviousPage}
-        disabled={currentPage === 1}
-        className={styles.paginationButton}
-      >
-        صفحه قبل
-      </button>
-      <span>
-        صفحه {currentPage} از {totalPages}
-      </span>
-      <button
-        onClick={handleNextPage}
-        disabled={currentPage === totalPages}
-        className={styles.paginationButton}
-      >
-        صفحه بعد
-      </button>
+    <div className={styles.pagination}>
+      <div>
+        {pageNumbers.map((page) => (
+          <span
+            onClick={() => setCurrentPage(page)}
+            className={
+              currentPage === page ? styles.selectedPage : styles.unSelectedPage
+            }
+            key={page}
+            style={{ marginRight: "1rem" }}
+          >
+            {page}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }

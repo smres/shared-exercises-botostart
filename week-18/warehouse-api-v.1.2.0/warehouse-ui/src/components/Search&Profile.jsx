@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Search&Profile.module.css";
 
 import profile from "../assets/profile.svg";
+import search from "../assets/search.svg";
 import { deleteCookie } from "../utils/cookie";
 import { notify } from "../utils/helper";
 import { useLocalStorage } from "../hooks/useLocalStorage";
@@ -35,7 +36,7 @@ function SearchProfile({ setProducts, allProducts }) {
       <div className={styles.profile}>
         <div>
           <span>
-            <span>Admin</span> - <h5>{profileInfo.username}</h5>
+            <span>مدیر</span> - <h5>{profileInfo.username}</h5>
           </span>
           <button onClick={logoutHandler} className={styles.logout}>
             خروج
@@ -49,6 +50,7 @@ function SearchProfile({ setProducts, allProducts }) {
         value={searchValue}
         onChange={changeHandler}
       />
+      <img src={search} alt="search icon" style={{ marginRight: "10px" }} />
     </div>
   );
 }

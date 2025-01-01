@@ -12,8 +12,8 @@ import { getCookie } from "../utils/cookie";
 import AddOrEditProductForm from "../components/AddOrEditProductForm";
 import DeleteProduct from "../components/DeleteProduct";
 import SearchProfile from "../components/Search&Profile";
-import Pagination from "../components/Pagination";
 import TableProducts from "../components/TableProducts";
+import PaginationAndLimit from "../components/PaginationAndLimit";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -32,6 +32,9 @@ function ProductsPage() {
     getCookie("token") || ""
   );
   const [isActiveEditBtn, setIsActiveEditBtn] = useState("");
+  const [limitShow, setLimitShow] = useState(() => {
+    return localStorage.getItem("selectedLimit") || 10;
+  });
 
   const navigate = useNavigate();
 
@@ -45,7 +48,7 @@ function ProductsPage() {
     const fetchProducts = async () => {
       try {
         const { data } = await api.get(
-          `/products/?page=${currentPage}&limit=10`
+          `/products/?page=${currentPage}&limit=${limitShow}`
         );
         console.log(data);
 
@@ -66,6 +69,10 @@ function ProductsPage() {
 
     fetchProducts();
   }, [currentPage]);
+
+  useEffect(() => {
+    localStorage.setItem("selectedLimit", limitShow);
+  });
 
   return (
     <div className={styles.container}>
@@ -106,36 +113,42 @@ function ProductsPage() {
         <h3>! محصولی وجود ندارد</h3>
       ) : (
         <>
-          <table className={styles.productTable}>
-            <thead>
-              <tr>
-                <th></th>
-                <th>شناسه کالا</th>
-                <th>قیمت</th>
-                <th>موجودی</th>
-                <th>نام کالا</th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((product) => (
-                <TableProducts
-                  key={product.id}
-                  product={product}
-                  setSelectedProductId={setSelectedProductId}
-                  setDeleteProductModal={setDeleteProductModal}
-                  setIsActiveEditBtn={setIsActiveEditBtn}
-                  setAddOrEditProductModal={setAddOrEditProductModal}
-                  products={products}
-                  setProductForm={setProductForm}
-                />
-              ))}
-            </tbody>
-          </table>
+          <div className={styles.tableContainer}>
+            <table className={styles.productTable}>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>شناسه کالا</th>
+                  <th>قیمت</th>
+                  <th>موجودی</th>
+                  <th>نام کالا</th>
+                </tr>
+              </thead>
+              <tbody>
+                {products.map((product) => (
+                  <TableProducts
+                    key={product.id}
+                    product={product}
+                    setSelectedProductId={setSelectedProductId}
+                    setDeleteProductModal={setDeleteProductModal}
+                    setIsActiveEditBtn={setIsActiveEditBtn}
+                    setAddOrEditProductModal={setAddOrEditProductModal}
+                    products={products}
+                    setProductForm={setProductForm}
+                  />
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-          <Pagination
+          <PaginationAndLimit
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             totalPages={totalPages}
+            limitShow={limitShow}
+            setLimitShow={setLimitShow}
+            setProducts={setProducts}
+            setTotalPages={setTotalPages}
           />
         </>
       )}

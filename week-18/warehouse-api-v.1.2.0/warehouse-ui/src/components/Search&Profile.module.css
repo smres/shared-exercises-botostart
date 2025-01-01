@@ -12,6 +12,7 @@
 .searchBox input {
   width: 65%;
   margin: 0 1rem;
+  margin-right: 0;
   background: #fff;
 }
 
@@ -67,4 +68,8 @@
 .logout:hover {
   background-color: transparent;
   color: #007aff;
+}
+
+.searchBox img {
+  margin-top: 0;
 }
