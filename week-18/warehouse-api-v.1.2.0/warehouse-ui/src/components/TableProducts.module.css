@@ -1,0 +1,13 @@
+.editBtn,
+.deleteBtn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+td button img {
+  margin-top: 0;
+}
