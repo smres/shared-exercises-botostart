@@ -40,22 +40,27 @@ function LoginPage() {
   });
 
   const onSubmit = (data) => {
-    try {
-      console.log(data);
-      setProfileInfo(data);
-      api.post("auth/login", data).then((res) => {
+    console.log(data);
+    setProfileInfo(data);
+    api
+      .post("auth/login", data)
+      .then((res) => {
         if (res.data?.token) {
           console.log(res);
           setCookie("token", res.data?.token);
           notify("success", "!با موفقیت وارد پنل کاربری شدید");
           navigate("/", { replace: true });
-        } else {
+        }
+      })
+      .catch((error) => {
+        console.log(error.response);
+
+        if (error.response?.status === 400) {
           notify("error", "نام کاربری یا رمز عبور اشتباه است");
+        } else {
+          notify("error", "خطا در ورود، لطفا دوباره تلاش کنید");
         }
       });
-    } catch (error) {
-      notify("error", "خطا در ورود، لطفا دوباره تلاش کنید");
-    }
   };
 
   return (

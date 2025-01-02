@@ -49,11 +49,20 @@ function RegistrationPage() {
 
   const onSubmit = (data) => {
     console.log(data);
-    api.post("auth/register", data).then((res) => {
-      console.log(res);
-      notify("success", "ثبت نام با موفقیت انجام شد");
-      navigate("/login", { replace: true });
-    });
+    api
+      .post("auth/register", data)
+      .then((res) => {
+        console.log(res);
+        notify("success", "ثبت نام با موفقیت انجام شد");
+        navigate("/login", { replace: true });
+      })
+      .catch((error) => {
+        if (error.response?.status === 400) {
+          notify("error", "نام کاربری تکراری است");
+        } else {
+          notify("error", "خطایی رخ داده است");
+        }
+      });
   };
 
   return (
