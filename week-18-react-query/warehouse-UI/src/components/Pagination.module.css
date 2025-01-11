@@ -1,0 +1,22 @@
+.selectedPage {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #55a3f0;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+}
+.unSelectedPage {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid #8d8d8d;
+  color: #8d8d8d;
+  display: inline-block;
+  cursor: pointer;
+}

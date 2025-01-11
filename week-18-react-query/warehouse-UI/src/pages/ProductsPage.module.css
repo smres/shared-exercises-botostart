@@ -1,0 +1,80 @@
+.container {
+  max-width: 1140px;
+  width: 1140px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.topTableContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topTableContent div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topTableContent div img {
+  margin-top: 0;
+  margin-left: 5px;
+}
+
+.addButton {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.addButton:hover {
+  background-color: #0056b3;
+}
+
+.productTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.productTable tbody tr {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.tableContainer {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.productTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productTable th,
+.productTable td {
+  padding: 12px 15px;
+}
+
+.productTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.productTable tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.productTable tbody tr:hover {
+  background-color: #f1f1f1;
+}
