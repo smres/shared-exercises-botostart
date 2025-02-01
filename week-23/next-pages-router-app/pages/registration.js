@@ -1,7 +1,8 @@
 import React from "react";
+import RegistrationPage from "../components/templates/RegistrationPage";
 
 function registration() {
-  return <div>registration</div>;
+  return <RegistrationPage />;
 }
 
 export default registration;

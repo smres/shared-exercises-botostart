@@ -7,7 +7,7 @@ export default function Home() {
   const clickHandler = () => {
     // Logging proccess successfull
 
-    router.replace("/students");
+    router.replace("/login");
   };
   return (
     <div className={styles.container}>
@@ -20,7 +20,7 @@ export default function Home() {
           <Link href="/users">Go to users page</Link>
         </li>
         <li>
-          <button onClick={clickHandler}>LogIn</button>
+          <button onClick={clickHandler}>Login</button>
         </li>
       </ul>
     </div>
