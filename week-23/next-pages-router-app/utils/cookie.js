@@ -22,9 +22,9 @@ const getCookie = (name) => {
   }
 };
 
-function deleteCookie(name) {
+const deleteCookie = (name) => {
   if (typeof window !== "undefined") {
-    removeCookieNext(name, { path: "/" });
+    deleteCookieNext(name, { path: "/" });
   }
-}
+};
 export { setCookie, getCookie, deleteCookie };
