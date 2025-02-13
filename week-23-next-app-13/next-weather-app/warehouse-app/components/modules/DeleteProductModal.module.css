@@ -1,0 +1,48 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 10px 10px 17px 5px rgba(214, 214, 214, 1);
+}
+
+.form img {
+  margin-top: 20px;
+}
+
+.acitons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 425px;
+}
+
+.acitons button {
+  width: 185px;
+  height: 40px;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  margin: 1rem 0.7rem;
+  cursor: pointer;
+}
+
+.acitons button[type="submit"] {
+  background-color: #55a3f0;
+}
+
+.acitons button[type="reset"] {
+  background-color: #dfdfdf;
+  color: black;
+}

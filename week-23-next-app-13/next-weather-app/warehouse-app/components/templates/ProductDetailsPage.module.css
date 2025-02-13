@@ -1,0 +1,30 @@
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.product-info {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.product-info span {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-info p {
+  margin: 5px 0;
+}
