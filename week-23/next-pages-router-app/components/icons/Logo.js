@@ -2,13 +2,7 @@ import React from "react";
 
 function logoHome() {
   return (
-    <svg
-      width="80"
-      height="85"
-      viewBox="0 0 80 85"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="80" height="85" viewBox="0 0 80 85" fill="none">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
